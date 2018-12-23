@@ -25,7 +25,12 @@ export class PedidoComponent implements OnInit {
   }
 
   realizarPedido() {
-    
+    this.arenalesService.registrarPedido(this.producto, this.cantidad).subscribe(pedido => {
+      this.arenalesService.updateUsuario().subscribe(user => {
+        this.arenalesService.user = user
+        this.router.navigate(['/perfil'])
+      })
+    })
   }
 
 }

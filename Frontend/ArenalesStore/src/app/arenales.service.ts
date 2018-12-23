@@ -5,6 +5,7 @@ import { Producto } from 'src/model/Producto';
 import { Tienda } from 'src/model/Tienda';
 import { Usuario } from 'src/model/Usuario';
 import { CookieService } from 'ngx-cookie-service';
+import { Compra } from 'src/model/Compra';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -121,5 +122,20 @@ export class ArenalesService {
       compras: null
     }
     return this.http.post<Usuario>(this.usuariosUrl + "/login", usuarioLogin, httpOptions)
+  }
+
+  registrarPedido(producto: Producto, cantidad: number) {
+    var pedido = new Compra
+    pedido.producto = producto
+    pedido.usuario = this.user
+    pedido.fechaCompra = new Date(Date.now())
+    pedido.fechaEntrega = null
+    pedido.cantidad = cantidad
+
+    return this.http.post<Compra>(this.comprassUrl, pedido, httpOptions)
+  }
+
+  updateUsuario(): Observable<Usuario> {
+    return this.loginTry(this.user.username, this.user.password)
   }
 }

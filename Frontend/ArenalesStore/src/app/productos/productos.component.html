@@ -7,9 +7,9 @@
   </nav>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm" *ngFor="let producto of productos">
+    <div class="col-sm" *ngFor="let producto of productos; index as i">
       <div class="card">
-        <img src="../../assets/img/300.png" alt="placeholder" class="card-img-top">
+        <img src="https://loremflickr.com/300/300?random={{i + (n*page)}}" alt="placeholder" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">{{producto.nombre}}</h5>
           <p class="card-text">{{producto.descripcion}}</p>

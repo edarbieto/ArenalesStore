@@ -1,0 +1,36 @@
+El proyecto es una página web para el Centro Comercial Arenales para poder ver productos, tiendas y poder realizar pedidos con fecha de pedido y entrega
+
+Se utilizo:
+
+- ASP Net Core 2.1
+- Entity Framework
+- Angular 6
+- Bootstrap 4
+
+- Visual Code (frontend)
+- Visual Studio (backend)
+
+Pasos para levantar el proyecto:
+
+1. Levantar el proyecto de la carpeta "Backend" (ArenalesStore.sln")
+2. Ejecutar el proyecto
+3. Abrir con VS Code la carpeta "...\Frontend\ArenalesStore"
+4. Ejecutar "npm install && ng serve" dentro de la carpeta
+5. Abrir en navegador "http://localhost:4200/"
+
+USUARIO DE PRUEBA:
+
+USERNAME: cpatis0
+PASSWORD: WYNwdxEb
+
+Consideraciones:
+
+- Las imagenes son solo de muestra (placeholder)
+- Al empezar el proyecto, no hay compras (pedidos) realizados. Si se desea ejecutar el script "Compras.sql" en la carpeta Scripts del Backend en SSMS en el LocalDB
+- Todos los nombres y descripcion son del tipo Lorem Ipsum para simular información
+
+Notas:
+
+- Para generar los datos de muestra se uso "https://mockaroo.com/"
+- Para las imagenes de muestra se uso "https://loremflickr.com/"
+- La funcionalidad de busqueda no esta habilitada aun

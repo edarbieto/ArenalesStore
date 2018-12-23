@@ -3,9 +3,9 @@
   <h2 class="text-primary subtitle">Productos del mes</h2>
   <div class="container">
     <div class="row">
-      <div class="col-sm" *ngFor="let producto of productosDelMes">
+      <div class="col-sm" *ngFor="let producto of productosDelMes; index as i">
         <div class="card">
-          <img src="../../assets/img/300.png" alt="placeholder" class="card-img-top">
+          <img src="https://loremflickr.com/300/300?random={{i}}" alt="placeholder" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">{{producto.nombre}}</h5>
             <p class="card-text">{{producto.descripcion}}</p>
@@ -19,9 +19,9 @@
   <h2 class="text-primary subtitle">Tiendas del mes</h2>
   <div class="container">
     <div class="row">
-      <div class="col-sm" *ngFor="let tienda of tiendasDelMes">
+      <div class="col-sm" *ngFor="let tienda of tiendasDelMes; index as i">
         <div class="card">
-          <img src="../../assets/img/300.png" alt="placeholder" class="card-img-top">
+          <img src="https://loremflickr.com/300/300?random={{i+3}}" alt="placeholder" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">{{tienda.nombre}}</h5>
             <p class="card-text">{{tienda.descripcion}}</p>

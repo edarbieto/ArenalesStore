@@ -37,7 +37,7 @@ namespace ArenalesStore.Controllers
                 return BadRequest(ModelState);
             }
 
-            var compra = await _context.Compras.Include(c => c.Producto).FirstOrDefaultAsync(c => c.CompraID == id);
+            var compra = await _context.Compras.Include(c => c.Producto).Include(c => c.Usuario).FirstOrDefaultAsync(c => c.CompraID == id);
 
             if (compra == null)
             {
@@ -90,6 +90,9 @@ namespace ArenalesStore.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            compra.Usuario = _context.Usuarios.Find(compra.Usuario.UsuarioID);
+            compra.Producto = _context.Productos.Find(compra.Producto.ProductoID);
 
             _context.Compras.Add(compra);
             await _context.SaveChangesAsync();

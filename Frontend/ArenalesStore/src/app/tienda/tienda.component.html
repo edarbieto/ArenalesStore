@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <img src="../../assets/img/300.png" alt="placeholder">
+      <img src="https://loremflickr.com/300/300" alt="placeholder">
     </div>
     <div class="col-sm">
       <h4>{{tienda.descripcion}}</h4>
@@ -12,9 +12,9 @@
 <h2 class="text-primary subtitle">Productos en tienda</h2>
 <div class="container-fluid">
   <div class="row" style="margin: 0px 50px;">
-    <div class="col-3" *ngFor="let producto of tienda.productos">
+    <div class="col-3" *ngFor="let producto of tienda.productos; index as i">
       <div class="card">
-        <img src="../../assets/img/300.png" alt="placeholder" class="card-img-top">
+        <img src="https://loremflickr.com/300/300?random={{i}}" alt="placeholder" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">{{producto.nombre}}</h5>
           <p class="card-text">{{producto.descripcion}}</p>
