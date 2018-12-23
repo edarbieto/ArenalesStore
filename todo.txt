@@ -1,0 +1,8 @@
+- diseño moqup
+- backend (asp net core + entity frmk + sql)
+	- sql database
+	- ...
+- frontend (angular? + *BOOTSTRAP*)
+	- copy moqup
+	- ...
+- test

@@ -1,0 +1,26 @@
+<h1 class="text-primary text-center" style="margin: 50px 0px;">{{tienda.nombre}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <img src="../../assets/img/300.png" alt="placeholder">
+    </div>
+    <div class="col-sm">
+      <h4>{{tienda.descripcion}}</h4>
+    </div>
+  </div>
+</div>
+<h2 class="text-primary subtitle">Productos en tienda</h2>
+<div class="container-fluid">
+  <div class="row" style="margin: 0px 50px;">
+    <div class="col-3" *ngFor="let producto of tienda.productos">
+      <div class="card">
+        <img src="../../assets/img/300.png" alt="placeholder" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{producto.nombre}}</h5>
+          <p class="card-text">{{producto.descripcion}}</p>
+          <a class="btn btn-info" (click)="gotoProducto(producto)">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

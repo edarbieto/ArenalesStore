@@ -1,0 +1,23 @@
+<h1 class="text-primary text-center" style="margin: 50px 0px;">{{producto.nombre}}</h1>
+<div [ngSwitch]="producto.origen">
+  <h4 class="text-success text-center" *ngSwitchCase="0">Origen: China</h4>
+  <h4 class="text-success text-center" *ngSwitchCase="1">Origen: Japon</h4>
+  <h4 class="text-success text-center" *ngSwitchCase="2">Origen: Corea</h4>
+</div>
+<h4 class="text-warning text-center">Precio: S/.{{producto.precio}}</h4>
+<h5 class="text-danger text-center" style="margin: 0px 0px 50px 0px;">Popularidad: {{producto.nEstrellas}}</h5>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <img src="../../assets/img/300.png" alt="placeholder">
+    </div>
+    <div class="col-sm">
+      <h4>{{producto.descripcion}}</h4>
+    </div>
+
+  </div>
+</div>
+<div class="text-center">
+  <button type="button" class="btn btn-primary" style="margin: 50px 20px;" (click)="gotoPedido()">Realizar pedido</button>
+  <button type="button" class="btn btn-primary" style="margin: 50px 20px;" (click)="gotoTienda()">Visitar tienda</button>
+</div>

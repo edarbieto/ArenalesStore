@@ -1,0 +1,14 @@
+<div class="container">
+  <form>
+    <h3 class="text-primary text-center blocktop">Ingrese su usuario y contraseña</h3>
+    <div class="form-group">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" [(ngModel)]="username" name="username">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="password" name="password">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary blocktop btn-block" (click)="login()">Login</button>
+    </div>
+  </form>
+</div>

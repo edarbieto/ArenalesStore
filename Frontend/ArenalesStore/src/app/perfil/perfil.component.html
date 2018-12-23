@@ -1,0 +1,27 @@
+<h1 class="text-primary">Hola, {{arenalesService.user.nickname}}</h1>
+<div *ngIf="arenalesService.user.compras !== null">
+    <h3 class="text-center">Pedidos realizados</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre del producto</th>
+                <th scope="col">Fecha de compra</th>
+                <th scope="col">Fecha de entrega</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let compra of arenalesService.user.compras">
+            <tr>
+                <th scope="row">{{compra.compraID}}</th>
+                <td>{{compra.producto.nombre}}</td>
+                <td>{{compra.fechaCompra}}</td>
+                <td>{{compra.fechaEntrega === null ? 'Aun no entregado' : compra.fechaEntrega}}</td>
+                <td>{{compra.cantidad}}</td>
+                <td>{{compra.cantidad * compra.producto.precio}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<button type="button" class="btn btn-info" (click)="gotoLogout()">Cerrar sesión</button>
